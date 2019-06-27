@@ -3061,3 +3061,85 @@ example: `12.0`
 
 
 |=====
+
+[[ecs-vulnerability]]
+=== Vulnerability Fields
+
+The vulnerability fields represent the common vulnerability enumeration and scoring systems
+
+Examples include Beats. Agents may also run on observers. ECS agent.* fields shall be populated with details of the agent running on the host or observer where the event happened or the measurement was taken.
+
+==== Vulnerability Field Details
+
+[options="header"]
+|=====
+| Field  | Description | Level
+
+// ===============================================================
+
+| vulnerability.ephemeral_id
+| Ephemeral identifier of this agent (if one exists).
+
+This id normally changes across restarts, but `agent.id` does not.
+
+type: keyword
+
+example: `8a4f500f`
+
+| extended
+
+// ===============================================================
+
+| vulnerability.id
+| Unique identifier of this agent (if one exists).
+
+Example: For Beats this would be beat.id.
+
+type: keyword
+
+example: `8a4f500d`
+
+| core
+
+// ===============================================================
+
+| vulnerability.name
+| Custom name of the agent.
+
+This is a name that can be given to an agent. This can be helpful if for example two Filebeat instances are running on the same host but a human readable separation is needed on which Filebeat instance data is coming from.
+
+If no name is given, the name is often left empty.
+
+type: keyword
+
+example: `foo`
+
+| core
+
+// ===============================================================
+
+| vulnerability.type
+| Type of the agent.
+
+The agent type stays always the same and should be given by the agent used. In case of Filebeat the agent would always be Filebeat also if two Filebeat instances are run on the same machine.
+
+type: keyword
+
+example: `filebeat`
+
+| core
+
+// ===============================================================
+
+| vulnerability.version
+| Version of the agent.
+
+type: keyword
+
+example: `6.0.0-rc2`
+
+| core
+
+// ===============================================================
+
+|=====

@@ -306,3 +306,8 @@ user_agent.os.name,keyword,extended,Mac OS X,1.1.0-dev
 user_agent.os.platform,keyword,extended,darwin,1.1.0-dev
 user_agent.os.version,keyword,extended,10.14.1,1.1.0-dev
 user_agent.version,keyword,extended,12.0,1.1.0-dev
+vulnerability.ephemeral_id,keyword,extended,8a4f500f,1.1.0-dev
+vulnerability.id,keyword,core,8a4f500d,1.1.0-dev
+vulnerability.name,keyword,core,foo,1.1.0-dev
+vulnerability.type,keyword,core,filebeat,1.1.0-dev
+vulnerability.version,keyword,core,6.0.0-rc2,1.1.0-dev

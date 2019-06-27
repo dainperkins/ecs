@@ -74,6 +74,8 @@ all fields are defined.
 
 | <<ecs-user_agent,User agent>> | Fields to describe a browser user_agent string.
 
+| <<ecs-vulnerability,Vulnerability>> | Fields about vulnerability enumeration and scoring (cve/cvss)
+
 |=====
 
 include::field-details.asciidoc[]

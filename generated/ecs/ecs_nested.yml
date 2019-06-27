@@ -3848,3 +3848,85 @@ user_agent:
   short: Fields to describe a browser user_agent string.
   title: User agent
   type: group
+vulnerability:
+  description: 'The vulnerability fields represent the common vulnerability enumeration
+    and scoring systems
+
+    Examples include Beats. Agents may also run on observers. ECS agent.* fields shall
+    be populated with details of the agent running on the host or observer where the
+    event happened or the measurement was taken.'
+  fields:
+    ephemeral_id:
+      description: 'Ephemeral identifier of this agent (if one exists).
+
+        This id normally changes across restarts, but `agent.id` does not.'
+      example: 8a4f500f
+      flat_name: vulnerability.ephemeral_id
+      ignore_above: 1024
+      level: extended
+      name: ephemeral_id
+      order: 4
+      short: Ephemeral identifier of this agent.
+      type: keyword
+    id:
+      description: 'Unique identifier of this agent (if one exists).
+
+        Example: For Beats this would be beat.id.'
+      example: 8a4f500d
+      flat_name: vulnerability.id
+      ignore_above: 1024
+      level: core
+      name: id
+      order: 3
+      short: Unique identifier of this agent.
+      type: keyword
+    name:
+      description: 'Custom name of the agent.
+
+        This is a name that can be given to an agent. This can be helpful if for example
+        two Filebeat instances are running on the same host but a human readable separation
+        is needed on which Filebeat instance data is coming from.
+
+        If no name is given, the name is often left empty.'
+      example: foo
+      flat_name: vulnerability.name
+      ignore_above: 1024
+      level: core
+      name: name
+      order: 1
+      short: Custom name of the agent.
+      type: keyword
+    type:
+      description: 'Type of the agent.
+
+        The agent type stays always the same and should be given by the agent used.
+        In case of Filebeat the agent would always be Filebeat also if two Filebeat
+        instances are run on the same machine.'
+      example: filebeat
+      flat_name: vulnerability.type
+      ignore_above: 1024
+      level: core
+      name: type
+      order: 2
+      short: Type of the agent.
+      type: keyword
+    version:
+      description: Version of the agent.
+      example: 6.0.0-rc2
+      flat_name: vulnerability.version
+      ignore_above: 1024
+      level: core
+      name: version
+      order: 0
+      short: Version of the agent.
+      type: keyword
+  footnote: 'Examples: In the case of Beats for logs, the agent.name is filebeat.
+    For APM, it is the agent running in the app/service. The agent information does
+    not change if data is sent through queuing systems like Kafka, Redis, or processing
+    systems such as Logstash or APM Server.'
+  group: 2
+  name: vulnerability
+  prefix: vulnerability.
+  short: Fields about vulnerability enumeration and scoring (cve/cvss)
+  title: Vulnerability
+  type: group
